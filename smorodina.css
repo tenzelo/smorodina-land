@@ -1,0 +1,683 @@
+:root {
+  --WhiteColor: #ffffff;
+  --BlackColor: #31304d;
+  --OrigBlack: #000000;
+  --SemiWhiteColor: #f0ece5;
+  --DarkPurpleColor: #161a30;
+  --PurpleColor: #B692C2;
+  --PlantGreenColor: #81A263;
+  --SemiYellow: #E7D37F;
+}
+
+html {
+  font-family: Open Sans, sans-serif;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body{
+  background-image: url(source/images/bg023.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+  margin: 0px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--BlackColor);
+}
+
+html.no-scroll{
+  overflow-y: hidden;
+}
+
+/* навбар: настройка отображения */
+.page-wrapper {
+  width: 100%;
+  height: auto;
+}
+
+.nav-wrapper {
+  width: 100%;
+  position: -webkit-fixed; /* Safari */
+  position: fixed;
+  top: 0;
+  background-color: none;
+}
+
+.nav-wrapper.toglactive {
+  background-color: var(--DarkPurpleColor);
+}
+
+/* навбар: дизайн */
+
+.navbar {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+  overflow: hidden;
+}
+
+.navbar img {
+  height: 10vh;
+  justify-self:flex-start;
+  margin-left: 20px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+  justify-self: end;
+  
+}
+
+.nav-item a {
+  color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* seacrh */
+
+  #search-icon:hover {
+    color: #3498db;
+    cursor: pointer;
+  }
+  
+  .search {
+    transform: translate(-35%);
+    -webkit-transform: translate(-35%);
+    transition: transform 0.7s ease-in-out;
+    color: #3498db;
+  }
+  
+  .no-search {
+    transform: translate();
+    transition: transform 0.7s ease-in-out;
+  }
+  
+  .search-input {
+    position: absolute;
+    right: 125px;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.6s ease;
+  }
+  
+  .search-active {
+    opacity: 1;
+    z-index: 0;
+  }
+  
+  input {
+    border: 0;
+    border-left: 1px solid #ccc;
+    border-radius: 0; /* FOR SAFARI */
+    outline: 0;
+    padding: 5px;
+  }
+
+/* мобильное меню и анимация кнопки */
+  
+.menu-toggle .bar{
+  width: 25px;
+  height: 3px;
+  background-color: var(--WhiteColor);
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+  
+.menu-toggle{
+  justify-self: end;
+  margin-right: 25px;
+  display: none;
+}
+  
+.menu-toggle:hover{
+  cursor: pointer;
+}
+  
+#mobile-menu.is-active .bar:nth-child(2){
+  opacity: 0;
+}
+  
+#mobile-menu.is-active .bar:nth-child(1){
+  -webkit-transform: translateY(8px) rotate(45deg);
+  -ms-transform: translateY(8px) rotate(45deg);
+  -o-transform: translateY(8px) rotate(45deg);
+  transform: translateY(8px) rotate(45deg);
+}
+  
+#mobile-menu.is-active .bar:nth-child(3){
+  -webkit-transform: translateY(-8px) rotate(-45deg);
+  -ms-transform: translateY(-8px) rotate(-45deg);
+  -o-transform: translateY(-8px) rotate(-45deg);
+  transform: translateY(-8px) rotate(-45deg);
+}
+/* раскрывающийся список */
+
+.acor-container {
+  margin: 20px 0;
+}
+.acor-container .acor-body {
+  margin: 0 auto;
+  height: 0;
+  padding: 0 30px;
+  box-sizing: border-box;
+  transition: color 0.2s, padding 0.2s;
+  overflow: hidden;
+}
+.acor-container .acor-body p {
+  margin: 0 0 10px;
+}
+.acor-container label {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content:flex-end;
+  align-items:center;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  padding: 10px 20px;
+  max-width: 80vw;
+  box-sizing: border-box;
+  font-size: 18px;
+  margin: 0 0 20px;
+  transition: color .35s;
+  border: 2px solid var(--BlackColor);
+  border-radius: 19px;
+}
+
+.acor-container > label > img{
+  margin: 0;
+  padding: 20px;
+}
+.acor-container label:hover {
+  background-color: var(--PurpleColor);
+  transition: .2s;
+}
+.acor-container input{
+  display: none;
+}
+.acor-container label:before {
+  content: '\276F';
+  padding: 5px;
+  float:inline-end;
+}
+.acor-container input:checked + label {
+  background-color: var(--PurpleColor);
+}
+.acor-container input:checked + label:before {
+
+  transition: transform .35s;
+  transform: rotate(90deg);
+}
+.acor-container input:checked + label + .acor-body {
+  height: auto;
+  margin-top: -5px;
+  color: #000;
+  padding: 20px 30px 10px;
+}
+/* секции - блоки с контентом */
+
+section{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background: rgb(222,222,222);
+  background: linear-gradient(45deg, rgba(222,222,222,1) 20%, rgba(255,255,255,1) 100%);
+  border-radius: 5px;
+  box-shadow: 0px 15px 13px -4px var(--DarkPurpleColor);
+  padding: 5vw;
+  margin: 5vw;
+}
+
+.TitleForNewSection{
+  text-align: center;
+  margin: 40px;
+}
+
+.TitleForNewSection h2{
+  font-size: 4vw;
+  color: rgb(255, 255, 255);
+  text-shadow: 0px 1px 10px rgba(0, 191, 255, 0.5);
+}
+
+.RealiseSection h2{
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  text-align: center;
+}
+
+.info{
+  background: var(--SemiYellow);
+  box-shadow: none;
+}
+
+form div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: linear-gradient(45deg, rgba(222,222,222,1) 20%, rgba(255,255,255,1) 100%);
+  border-radius: 5px;
+  box-shadow: 0px 15px 13px -4px var(--DarkPurpleColor);
+  padding: 5vw;
+  margin: 5vw;
+}
+
+form button{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+label{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 3vw;
+}
+
+#endForm{
+  background: rgba(0, 0, 0, 0);
+  box-shadow: none;
+  padding: 0;
+}
+
+.gallery{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 3vw;
+}
+
+.gallery img{
+  min-width: 100%;
+}
+
+#ListInSection div{
+  max-width: 50%;
+}
+
+section img{
+  margin-top: 20px;
+  max-width: 40vw;
+}
+
+ul {
+  padding: 0;
+}
+
+h1, h2, p, li{
+  color: var(--OrigBlack);
+}
+
+h2{
+  color: var(--DarkPurpleColor);
+  user-select: none;
+}
+
+a{
+  text-decoration-line: none;
+  color: var(--WhiteColor);
+}
+
+.IntroForStartToSee{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+
+.IntroForStartToSee h1{
+  user-select: none;
+  font-size: 30px;
+  text-align: center;
+  color: var(--WhiteColor);
+  text-shadow: 0px 2px 6px var(--DarkPurpleColor);
+  width: 100vw;
+}
+
+.IntroForStartToSee img{
+  padding-top: 100px;
+  max-width: 600px;
+}
+
+
+
+  /*-----------<<<<<---------------дизайн кнопки*/
+  .ButtonWithDesignAndAnimation {
+    align-self: center;
+    text-decoration: none;
+    background-color: var(--WhiteColor);
+    border: 2px solid var(--DarkPurpleColor);
+    color: var(--DarkPurpleColor);
+    padding: 10px;
+    margin-top: 30px;
+    border-radius: 19px;
+    text-align: center;
+    width: fit-content;
+  }
+
+  .OptionsHorizontal{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .DesignCard {
+    align-self: center;
+    text-decoration: none;
+    background-color: var(--WhiteColor);
+    border: 2px solid var(--DarkPurpleColor);
+    color: var(--DarkPurpleColor);
+    border-radius: 3px;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    margin: 20px;
+    width: 30vw;
+    width: 200px;
+    height: 200px;
+    min-height: 200px;
+    background-repeat: no-repeat; 
+    background-size:100%;
+  }
+
+  #Plan{
+    align-content: center;
+    color: var(--DarkPurpleColor);
+    font-size: 30px;
+  }
+
+
+  #Real{
+    align-content: center;
+    color: var(--DarkPurpleColor);
+    font-size: 30px;
+  }
+
+
+/*-----------------------------------------------подвал сайта*/
+
+footer {
+  display: block;
+  height: auto;
+  max-width: 100vw;
+  overflow: hidden;
+  background: rgb(222,222,222);
+  background: linear-gradient(45deg, rgba(222,222,222,1) 20%, rgba(255,255,255,1) 100%);
+  text-transform: uppercase;
+  padding: 2%;
+}
+
+.FlexibleContentForSiteFooter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.FlexibleContentForSiteFooter a {
+  color: var(--DarkPurpleColor);
+  text-decoration: none;
+  border: 2px solid var(--DarkPurpleColor);
+  border-radius: 17px;
+  width: fit-content;
+}
+
+.LogotypeSiteFooter {
+  width: 500px;
+}
+
+.AdditionalRowInSiteFooter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 350px;
+  height: 90%;
+}
+
+.AdditionalRowInSiteFooter a{
+  color: var(--DarkPurpleColor);
+  margin: 10px;
+  padding: 10px;
+}
+/*-----------------------------------------------динамическая форма*/
+  .isQuestionsBlock {
+    display: none; /* Скрываем все блоки по умолчанию */
+  }
+  .isQuestionsBlock.active {
+    display: flex;
+  }
+
+  .isOutputForm{
+    display: none;
+  }
+
+  .isOutputForm.active{
+    display: flex;
+  }
+
+/* Responsiveness */
+@media (min-width:871px){
+ 
+  article{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  section{
+    margin: 10vw;
+    margin-top: 2vw;
+    margin-bottom: 5vw;
+  }
+
+  .navbar ul{
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    align-self: center;
+    grid-template-columns: none;
+    margin-right: 5vw;
+  }
+  .nav-item a {
+    display: flex;
+    color: var(--WhiteColor);
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.5vw;
+    padding: 2vh;
+    padding-right: 4vh;
+    transition: color 0.3s ease-out;
+  }
+  
+  .nav-item a:hover {
+    color: var(--PlantGreenColor);
+  }
+
+  #Contact {
+    border: 2px solid var(--WhiteColor);
+    border-radius: 19px;
+  }
+  #Contact a{
+    padding-right: 2vh;
+  }
+  #Contact:hover{
+    background-color: var(--WhiteColor);
+    transition: 0.3s;
+  }
+
+  
+  form div{
+    margin: 10vw;
+    margin-top: 2vw;
+    margin-bottom: 5vw;
+  }
+
+  input{
+    width: 40%;
+    font-size: 15px;
+    padding: 2vw;
+    height: fit-content;
+    border: 2px solid var(--DarkPurpleColor);
+    border-radius: 3px;
+  }
+
+  footer{
+    padding-left: 10vw;
+  }
+  .ButtonWithDesignAndAnimation:hover {
+    transform: scale(1.05);
+    transition: 0.1s;
+  }
+  .DesignCard:hover {
+    transform: scale(1.05);
+    transition: 0.1s;
+  }
+  .DesignCard:active {
+    transform: scale(0.85);
+  }
+
+}
+
+
+@media only screen and (max-width: 870px) {
+
+/* мобильная навигация*/
+
+  .navbar ul {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    justify-content: start;
+    top: 8vh;
+    background-color: #fff;
+    width: 100%;
+    height: calc(100vh - 55px);
+    transform: translate(-101%);
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .navbar li {
+    padding: 15px;
+  }
+  
+  .navbar li:first-child {
+    margin-top: 50px;
+  }
+  
+  .navbar li a {
+    font-size: 1rem;
+  }
+   
+  .menu-toggle, .bar {
+    display: block;
+    cursor: pointer;
+  }
+  
+  .mobile-nav {
+  transform: translate(0%)!important;
+} 
+
+li{
+  padding-bottom: 20px;
+}
+
+
+/* подвал сайта */
+
+  footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .FlexibleContentForSiteFooter {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--end);
+  }
+
+  .LogotypeSiteFooter {
+    width: 80vw;
+  }
+
+  .AdditionalMenuForSiteFooter {
+    display: flex
+  }
+  .AdditionalRowInSiteFooter {
+    justify-content: left;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-self: center;
+    height: fit-content;
+    margin-bottom: 20px;
+  }
+
+/* etc. */
+
+  .ButtonWithDesignAndAnimation {
+    border: 2px solid;
+    border-radius: 5px;
+    padding: 3%;
+    margin-bottom: 20px;
+  }
+
+ 
+  .IntroForStartToSee {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .IntroForStartToSee h1 {
+    width: 80vw;
+    font-size: 5vw;
+  }
+
+  .TitleForNewSection{
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+ 
+  section{
+    background-color: transparent;
+  }
+
+  #ListInSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #ListInSection div{
+    max-width: 100%;
+  }
+  #ListInSection img{
+    max-width: 100%;
+  }
+
+  button{
+    margin: 10px;
+  }
+
+  .NavigationBarForButtons{
+    width: fit-content;
+    background-color: #81A263
+  }
+  
+  .NavigationBarForButtons a{
+    margin: 10px;
+  }
+}
