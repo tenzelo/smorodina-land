@@ -1,0 +1,23 @@
+
+.taglist{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.taglist > a {
+    margin:8px;
+    margin-bottom: 50px;
+    margin-top: 0px;
+}
+.col img{
+    border-radius:5px;
+}
+
+
+@media (min-width: 870px) {
+    .col img:hover{
+        padding: 10px;
+        transition: 0.2s ease-in-out;
+        border-radius:30px;
+    }
+}

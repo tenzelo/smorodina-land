@@ -44,123 +44,72 @@
 
       
 
-      <article>
-        <div class="IntroForStartToSee">
-          <img src="source/vector/logo_f.png" width="60%"  alt="SMORODINA"/>
-        </div>
-        <div class="IntroForStartToSee">
-          <h1>Анкета клиента </h1>
-        </div>
-
-      <section class="info"> <!-- шапка анкеты -->
-          <h2>Об анкете</h2>
-          <p>
-            Подробное заполнение этой анкеты не является обязательным,
-            но оно поможет нам лучше понять ваши потребности и сделать
-            ваш участок максимально уютным и комфортным для вас и вашей семьи! 
-          </p>
-      </section>
-
-      <!-- Форма -->
-  <form method="get" id ="smorodinaForm">
-
-    <div class="isQuestionsBlock active" id="block1">
-      <h2> Ваши контактные данные</h2>
-
-      <label>
-        Ваше ФИО
-        <input type="text" id ="userName" name="userName">
-      </label>
-
-      <label>
-        Адрес вашего участка
-        <input type="text" id ="userLocation" name="userLocation">
-      </label>
-
-      <label>
-        Размер участка (кол-во "соток")
-        <input type="number" id = "squareSize" name="squareSize">
-      </label>
-
-      <label>
-        Число проживающих на участке
-        <input type="number" id ="familySize" name="familySize">
-      </label>
-
-      <button type="button" class ="ButtonWithDesignAndAnimation" onclick="showNextBlock(1)">Далее</button>
-    </div>
-
-    <div class="isQuestionsBlock active" id="block2">
-      <h2> Тип пространства</h2>
-
-      <label>
-        Люблю простор, большие открытые пространства и лужайки,
-        весь участок должен хорошо просматриваться
-        <input type="checkbox" id ="panoramicView" name="panoramicView">
-      </label>
-
-      <label>
-        Чувствую себя некомфортно в тесных, закрытых пространствах
-        <input type="checkbox" id ="baseView" name="baseView">
-      </label>
-
-      <label>
-        Образ зарослей и леса вызывает у меня неприятные ассоциации
-        <input type="number" id = "hateOvergrow" name="hateOvergrow">
-      </label>
-
-      <label>
-        Число проживающих на участке
-        <input type="number" id ="familySize" name="familySize">
-      </label>
-
-      <button type="button" class ="ButtonWithDesignAndAnimation" onclick="showNextBlock(1)">Далее</button>
-    </div>
-
-    
-    <div class="isQuestionsBlock" id="block3">
-      <h2>Ваше предпочтения</h2>
-      <label>
-        Особенности участка
-        <input type="text" id = "specialQuestion" name="specialQuestion">
-      </label>
-
-      <button type="button" class ="ButtonWithDesignAndAnimation" onclick="showNextBlock(2)">Далее</button>
-
-    </div>
-
-    <div id="output" class="isOutputForm"></div>
-    
-    <div id="endForm">
-      <button type="button" class ="ButtonWithDesignAndAnimation" onclick="submitForm()">Отправить форму</button>
-    </div>
-
-  </form>
-
+        <article>
   
-
-      </article>
-    </main>
-
-    <footer>
-      <!-- ПОДВАЛ -->
-
-      <div class="FlexibleContentForSiteFooter">
-        <!-- лого -->
-        <div>
-          <img class="LogotypeSiteFooter" src="source/vector/logo_f2.png" alt="LogotypeSiteFooter" />
-        </div>
-
-        <!-- соцсети и меню -->
-        <div class="AdditionalMenuForSiteFooter">
-          <div class="AdditionalRowInSiteFooter">
-            <a href="tel:+79500887748">+7 (950) 088-77-48</a>
-            <a href="mailto:">smorodina-land@mail.ru</a>
-          <!--  <a href="#">Отзывы</a> -->
+          <div class="totalPrice">
+            <h3>Стоимость работ:</h3>
+            <p>0.00</p>
           </div>
-        </div>
-      </div>
+  
+          <!-- Форма -->
+          <form method="get" id="smorodinaForm">
+  
+            <div class="isQuestionsBlock active" id="block1">
+              <h2>Анкета клиента</h2>
+  
+              <label>
+                Ваше ФИО
+                <input type="text" id="userName" name="userName">
+              </label>
+  
+              <label>
+                Номер телефона
+                <input type="tel" id="userPhone" name="userPhone">
+              </label>
+  
+              <label>
+                Email
+                <input type="email" id="userEmail" name="userEmail">
+              </label>
+  
+              <label>
+                Где находится ваш участок?
+                <input type="text" id="userLocation" name="userLocation">
+              </label>
+  
+              <label>
+                Кол-во соток
+                <select id="squareSize" name="squareSize">
+                  <option value="0-5">0-5 соток</option>
+                  <option value="6-20">6-20 соток</option>
+                  <option value="moreThan20">Более 20 соток</option>
+                </select>
+              </label>
+  
+              <label>
+                Пакет услуг
+                <select id="servicePackage" name="servicePackage">
+                  <option value="package1">Пакет услуг 1</option>
+                  <option value="package2">Пакет услуг 2</option>
+                  <option value="package3">Пакет услуг 3</option>
+                </select>
+              </label>
+  
+              <label>
+                Сделана ли топосъёмка участка?
+                <select id="topographicSurvey" name="topographicSurvey">
+                  <option value="yes">Да</option>
+                  <option value="no">Нет</option>
+                </select>
+              </label>
 
-    </footer>
+              <button type="submit" class="ButtonWithDesignAndAnimation">Отправить форму</button>
+
+            </div>
+  
+          </form>
+  
+        </article>
+      </main>
   </body>
 </html>
