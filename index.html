@@ -10,8 +10,6 @@
     <link href="source/vector/lavender.png" rel="shortcut icon" />
     
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="smorodina-f2.js"></script>
-    <script type="text/javascript" src="fslightbox.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 
     <meta property="og:title" content="Дизайн-студия Smorodina" />
@@ -29,7 +27,7 @@
     <main>
 
       <div class="page-wrapper">
-        <div class="nav-wrapper">
+        <div class="nav-wrapper nav-someitem">
           <nav class="navbar">
             <img src="source/vector/nav_logo.png" alt="Company Logo">
             <div class="menu-toggle" id="mobile-menu">
@@ -38,10 +36,13 @@
               <span class="bar"></span>
             </div>
             <ul class="nav no-search">
-              <li class="nav-item"><a href="test_p.html">Реализация</a></li>
-              <li class="nav-item"><a href="test_p.html">Эскизы</a></li>
-              <li class="nav-item"><a href="form.html">Заполнить анкету</a></li>
+              <li class="nav-item special-item for-mobile"><a href="test_p.html">Реализованные проекты</a></li>
+              <li class="nav-item special-item for-mobile"><a href="test_p.html">Эскизные работы</a></li>
+              <li class="nav-item special-item for-monitor-screen"><a href="test_p.html">Портфолио</a></li>
+              <li class="nav-item special-item for-mobile"><a href="#">Анкета для индивидуального заказа</a></li>
+              <li class="nav-item special-item for-monitor-screen"><a href="#">Сделать заказ</a></li>
               <li class="nav-item" id="Contact"><a href="tel:+79500887748">+7 (950) 088-77-48</a></li>
+              <li class="nav-item for-mobile" id="Contact"><a href="mailto:smorodina-land@mail.ru">smorodina-land@mail.ru</a></li>
             </ul>
           </nav>
         </div>
@@ -57,7 +58,6 @@
       </div>
 
         <section>
-          <h2>О нас</h2>
           <div>
             <p>Мастерская начала свою работу в 2022 году. За это время нами было реализовано
               множество различных проектов. </p>
@@ -79,14 +79,24 @@
             <label for="chacor1"> Проектирование
               <img src="source/vector/planing.png" width="50" alt="Проектирование"/></label>
               <div class="acor-body">
-                <p></p>
+                <h3>Превратим ваши мечты о прекрасном саду в реальность</h3>
+                <p>Наш этап проектирования – это фундамент
+                  будущего ландшафтного дизайна.<br>Мы работаем индивидуально с каждым клиентом, учитывая особенности
+                  вашего участка, архитектуру дома, ваши пожелания и бюджет.<br><br>  
+                  В процессе проектирования мы создадим детальный план, включающий:
+                  <br><br>- планировку дорожек и площадок;<br><br>- выбор растений;<br><br>- расположение малых
+                  архитектурных форм (беседки, фонтаны, альпийские горки и т.д.);<br><br>- систему освещения и др.
+                  <br><br><b>Результат – уникальный проект, идеально подходящий именно вам.</b></p>
               </div>
             
             <input type="checkbox" name="chacor" id="chacor2" />
             <label for="chacor2"> Реализация
               <img src="source/vector/realise.png" width="50" alt="Реализация"/></label>
             <div class="acor-body">
-                <p></p>
+              <h3>Мы используем только лучшие материалы и современное оборудование</h3>
+              <p>От земляных работ и подготовки грунта до посадки растений и установки малых
+                архитектурных форм.<br><br><b>Мы контролируем каждый этап реализации проекта, гарантируя безупречный результат.</b>
+                <br>Доверьтесь нам, и ваш сад станет таким, как вы всегда мечтали.</p>
             </div>
             
             <input type="checkbox" name="chacor" id="chacor3" />
@@ -94,7 +104,16 @@
               <img src="source/vector/nature.png" width="50" alt="Озеленение"/>
             </label>
             <div class="acor-body">
-                <p></p>
+              <h3>Сердце любого сада – его растительность</h3>
+              <p>Наши специалисты по озеленению помогут вам создать уникальный
+                зеленый оазис.<br><br></p>
+              <h3>Мы предлагаем широкий выбор растений</h3>
+              <p> От декоративных кустарников и цветов до хвойных и
+                лиственных деревьев: подберем растения, идеально подходящие для
+                климата вашего региона и особенностей почвы, создадим гармоничные композиции,
+                которые будут радовать вас своей красотой на протяжении всего года.<br><br>  
+                <b>Озеленение – это не просто посадка растений, это искусство создания живой картины,
+                  которая будет меняться и развиваться с течением времени!</b><br></p>
             </div>
 
             <input type="checkbox" name="chacor" id="chacor4" />
@@ -102,7 +121,9 @@
               <img src="source/vector/park.png" width="50" alt="Уход за садом"/>
             </label>
             <div class="acor-body">
-                <p></p>
+              <h3>Мы разработаем индивидуальный план ухода за растениями!</h3>
+              <p>Учитывая их особенности и ваши возможности!<br>С нами ваш сад всегда будет в отличном состоянии,
+                 требуя минимум ваших усилий.</p>
             </div>
          
         </div>
@@ -133,12 +154,33 @@
         -->
         </section>
 
-        <section class="RealiseSection">
+        <section>
           <h2>Наше портфолио</h2>
-          <div class="OptionsHorizontal">
-            <a href="demo_projects.html" class="DesignCard" id ="Plan">Эскизы</a>
-            <a href="real_projects.html" class="DesignCard" id = "Real">Реализация</a>
+          
+          <div class="taglist">
+            <a href="#"class="ButtonWithDesignAndAnimation isSelected" id="all">Все работы</a>
+            <a href="#"class="ButtonWithDesignAndAnimation" id="realisations">Реализация</a>
+            <a href="#"class="ButtonWithDesignAndAnimation" id="demos">Эскизы</a>
           </div>
+
+          <div class="row g-2">
+            <div class="col">
+                <a class="my-2 d-block bordered" id="realisationsProject" href="real_projects.html">
+                    <h3>50 оттенков серого</h3>
+                    <p>СНТ «Ангарский берег» </p>
+                    <img class="img-fluid" src="source/images/img103a.jpg" alt="img103a">
+                </a>
+                <a class="my-2 d-block bordered" id="demosProject" href="demo_projects.html">
+                  <h3>Солнечная терраса</h3>
+                  <p>СНТ «Молодёжный»</p>
+                  <img class="img-fluid" src="source/images/img901.jpg" alt="img901">
+                </a>
+                <a class="my-2 d-block bordered" id="demosProject2" href="connection.html">
+                  <h3>Объединение</h3>
+                  <p>СНТ «Авиатор»</p>
+                  <img class="img-fluid" src="source/images/img201.jpg" alt="img201">
+                </a>
+            </div>
         </section>
 
         <section>
@@ -177,12 +219,16 @@
         <div class="AdditionalMenuForSiteFooter">
           <div class="AdditionalRowInSiteFooter">
             <a href="tel:+79500887748">+7 (950) 088-77-48</a>
-            <a href="mailto:">smorodina-land@mail.ru</a>
+            <a href="mailto:smorodina-land@mail.ru">smorodina-land@mail.ru</a>
+            <a href="https://t.me/creatorzegors">Разработка веб-сайта</a>
           <!--  <a href="#">Отзывы</a> -->
           </div>
         </div>
       </div>
 
     </footer>
+    <script type="text/javascript" src="smorodina-f2.js"></script>
+    <script type="text/javascript" src="fslightbox.js"></script>
+    <script type="text/javascript" src="smorodina-projects.js"></script>
   </body>
 </html>
